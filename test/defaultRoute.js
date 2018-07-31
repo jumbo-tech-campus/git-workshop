@@ -7,9 +7,11 @@ require('./../routes/default')
 
 // Test files must require the lab module, and export a test script
 const lab = (exports.lab = Lab.script())
+const it = lab.it
+const describe = lab.describe
 
-lab.describe('default route,', () => {
-  lab.it('returns 200 status', async () => {
+describe('default route,', () => {
+  it('returns 200 status', async () => {
     const injectOptions = {
       method: 'GET',
       url: '/',
@@ -19,7 +21,7 @@ lab.describe('default route,', () => {
     expect(response.statusCode).to.equal(200)
   });
 
-  lab.it('returns Hallo wereld', async () => {
+  it('returns Hallo wereld', async () => {
     const injectOptions = {
       method: 'GET',
       url: '/',
@@ -30,7 +32,7 @@ lab.describe('default route,', () => {
   });
 
 
-  lab.it('returns Hallo with name from query param', async () => {
+  it('returns Hallo with name from query param', async () => {
     const injectOptions = {
       method: 'GET',
       url: '/?name=Jumbo',
