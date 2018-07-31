@@ -4,6 +4,10 @@ server.route({
   method: 'GET',
   path: '/',
   handler: (request, h) => {
-    return 'Hallo wereld!'
+    var response = encodeURIComponent(request.query.name)
+    if (response === 'undefined') {
+          response = 'wereld'
+    }
+    return `Hallo ${response}!`
   }
 })
