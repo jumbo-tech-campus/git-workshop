@@ -28,4 +28,16 @@ lab.describe('default route,', () => {
 
     expect(response.payload).to.equal('Hallo wereld!')
   });
+
+
+  lab.it('returns Hallo with name from query param', async () => {
+    const injectOptions = {
+      method: 'GET',
+      url: '/?name=Jumbo',
+
+    }
+    const response = await server.inject(injectOptions)
+
+    expect(response.payload).to.equal('Hallo Jumbo!')
+  });
 });
