@@ -4,6 +4,6 @@ server.route({
   method: 'GET',
   path: '/',
   handler: (request, h) => {
-    return 'OK'
+    return 'Hallo wereld!'
   }
 })
