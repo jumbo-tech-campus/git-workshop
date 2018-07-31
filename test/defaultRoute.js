@@ -7,8 +7,7 @@ require('./../routes/default')
 
 // Test files must require the lab module, and export a test script
 const lab = (exports.lab = Lab.script())
-const it = lab.it
-const describe = lab.describe
+const { describe, it } = lab;
 
 describe('default route,', () => {
   it('returns 200 status', async () => {
