@@ -8,3 +8,21 @@ The commit message of the last commit is missing the JIRA issue number (GIT-1). 
 This exercise is similar to the first one, you have to rewrite the commit message of the `Update the README to include the first exercise` commit. This time you cannot use `git commit --amend`, because it isn't the last commit you want to change (check `git log` to see which one it is). Now you can use interactive rebase to change the commit: `git rebase -i origin/master`.
 
 _Tip: read the instructions in the editor that Git presents. You need to change the word `pick` into `reword` in one of the lines!_
+
+### Exercise three: fix a mistake in a previous commit
+If you look at the test for the default route, you will notice that the last test asserts that the default route returns `Hallo wereld` as response. However, this is not correct, since the slogan for JTC is `Hallo world`. You can fix that mistake by making a new commit, but what you can also do is change the `[GIT-1] Change response in default route to 'Hallo world'` commit so it contains the correct slogan. This is what we are going to do. Change the code in [the default route file](routes/default.js#L6) to:
+```javascript
+handler: (request, h) => {
+  return 'Hallo world!'
+}
+```
+
+And the code in [the test for the default route](test/defaultRoute.js#L29) to:
+```javascript
+expect(response.payload).to.equal('Hallo world!')
+```
+to make sure the tests still run.
+
+Use interactive rebasing to change the commit: `git rebase -i origin/master`.
+
+_Tip: you can use `edit` to change the commit during rebasing. Git will stop the rebase at the point of the commit, you can change the code and add your changes to the stage with `git add`. Once added, you can finish the rebase with `git rebase --continue`_
