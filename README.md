@@ -40,3 +40,15 @@ After looking at the default route test, we were a bit unhappy with the readabil
 Take a look at the Git log. It seems that these commits have the same message and similar contents (you can view git commit changes by using `git show` and `git show HEAD~`). Let's make one commit of these two commits. Use interactive rebasing to squash the `[BOYSCOUT] Make default route test more readable by extracting a const` commits into one commit.
 
 _Tip: you can also use `fixup` instead of `squash`. With `fixup` the commit message of the previous commit (e.g. the commit that is fixed up) will be used. The step where you choose a commit message from both commit messages will be skipped._
+
+### Exercise six: fixing up a previous commit because tests are failing
+At Jumbo we do not really like our main competitor. As an easter egg, we want to return a `403 Forbidden` status code if someone uses the name parameter `Appie`. We created the test and the code and we created a commit for it.
+
+However, if you run the tests (`npm test`), you will see that the tests fail! Apparently we did something wrong. Look at the code in the test and in the route and you will spot the bug.
+
+In exercise three we fixed the commit by using `edit`. This time we will use a different approach:
+- create a new commit which fixes the bug
+- start an interactive rebase
+- reorder the commit so that your new commit will be below the `[GIT-6] Add easter egg for Appie in default route` commit
+- change the action for the new commit to `fixup`
+- save the file and voila, your commit is fixed
