@@ -26,3 +26,10 @@ to make sure the tests still run.
 Use interactive rebasing to change the commit: `git rebase -i origin/master`.
 
 _Tip: you can use `edit` to change the commit during rebasing. Git will stop the rebase at the point of the commit, you can change the code and add your changes to the stage with `git add`. Once added, you can finish the rebase with `git rebase --continue`_
+
+### Exercise four: reorder commits to reflect workflow
+In this project, we work with a test driven workflow. We created a test for a new feature: when you send the query parameter `name` to the default route, you get a response that includes that name (see [the test for the default route](test/defaultRoute.js#L33)). For example, a request to `http://localhost:3000/?name=Jumbo` will get the response `Hallo Jumbo!`. 
+
+We made the code changes and created two commits, but have a look at the Git log. It now looks like we wrote the tests _after_ writing the feature. We can leave it as it is (that is perfectly fine), but for the sake of the workshop, let's change the order to match our workflow. Use interactive rebasing to change the order of the commits.
+
+_Tip: you can change the order of commits in the editor that Git presents, by reordering the list_
