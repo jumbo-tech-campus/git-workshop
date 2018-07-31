@@ -4,8 +4,8 @@
   "description": "Example NodeJS app for the Git workshop",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "start": "nodemon ./server.js"
+    "test": "lab --assert code --leaks --coverage",
+    "start": "nodemon ./start.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "dependencies": {
     "hapi": "^17.5.2",
     "nodemon": "^1.18.3"
+  },
+  "devDependencies": {
+    "code": "^5.2.0",
+    "lab": "^15.5.0"
   }
 }
