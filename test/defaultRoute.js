@@ -18,4 +18,14 @@ lab.describe('default route,', () => {
 
     expect(response.statusCode).to.equal(200)
   });
+
+  lab.it('returns Hallo wereld', async () => {
+    const injectOptions = {
+      method: 'GET',
+      url: '/',
+    }
+    const response = await server.inject(injectOptions)
+
+    expect(response.payload).to.equal('Hallo wereld!')
+  });
 });
