@@ -41,4 +41,14 @@ describe('default route,', () => {
 
     expect(response.payload).to.equal('Hallo Jumbo!')
   });
+
+  it('returns 403 status if name is Appie', async () => {
+    const injectOptions = {
+      method: 'GET',
+      url: '/?name=AH',
+    }
+    const response = await server.inject(injectOptions)
+
+    expect(response.statusCode).to.equal(403)
+  });
 });

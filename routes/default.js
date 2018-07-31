@@ -8,6 +8,11 @@ server.route({
     if (response === 'undefined') {
           response = 'wereld'
     }
-    return `Hallo ${response}!`
+    if (response !== 'Appie'){
+      return `Hallo ${response}!`
+    } else {
+      return h.response().code(403)
+    }
+
   }
 })
