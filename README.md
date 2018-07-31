@@ -28,8 +28,15 @@ Use interactive rebasing to change the commit: `git rebase -i origin/master`.
 _Tip: you can use `edit` to change the commit during rebasing. Git will stop the rebase at the point of the commit, you can change the code and add your changes to the stage with `git add`. Once added, you can finish the rebase with `git rebase --continue`_
 
 ### Exercise four: reorder commits to reflect workflow
-In this project, we work with a test driven workflow. We created a test for a new feature: when you send the query parameter `name` to the default route, you get a response that includes that name (see [the test for the default route](test/defaultRoute.js#L33)). For example, a request to `http://localhost:3000/?name=Jumbo` will get the response `Hallo Jumbo!`. 
+In this project, we work with a test driven workflow. We created a test for a new feature: when you send the query parameter `name` to the default route, you get a response that includes that name (see [the test for the default route](test/defaultRoute.js#L33)). For example, a request to `http://localhost:3000/?name=Jumbo` will get the response `Hallo Jumbo!`.
 
 We made the code changes and created two commits, but have a look at the Git log. It now looks like we wrote the tests _after_ writing the feature. We can leave it as it is (that is perfectly fine), but for the sake of the workshop, let's change the order to match our workflow. Use interactive rebasing to change the order of the commits.
 
 _Tip: you can change the order of commits in the editor that Git presents, by reordering the list_
+
+### Exercise five: squashing commits that do the same thing
+After looking at the default route test, we were a bit unhappy with the readability. We see that using `lab.it` and `lab.describe` is less readable than just using `it` and `describe`. We made two boyscout commits to improve the code.
+
+Take a look at the Git log. It seems that these commits have the same message and similar contents (you can view git commit changes by using `git show` and `git show HEAD~`). Let's make one commit of these two commits. Use interactive rebasing to squash the `[BOYSCOUT] Make default route test more readable by extracting a const` commits into one commit.
+
+_Tip: you can also use `fixup` instead of `squash`. With `fixup` the commit message of the previous commit (e.g. the commit that is fixed up) will be used. The step where you choose a commit message from both commit messages will be skipped._
