@@ -1,0 +1,24 @@
+{
+  "name": "git-workshop",
+  "version": "0.0.1",
+  "description": "Example NodeJS app for the Git workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jumbo-tech-campus/git-workshop.git"
+  },
+  "author": "Roelof Reitsma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jumbo-tech-campus/git-workshop/issues"
+  },
+  "homepage": "https://github.com/jumbo-tech-campus/git-workshop#readme",
+  "dependencies": {
+    "hapi": "^17.5.2",
+    "nodemon": "^1.18.3"
+  }
+}
