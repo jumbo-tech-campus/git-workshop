@@ -1,5 +1,6 @@
 const server = require('./server')
 require('./routes/default')
+require('./routes/products')
 
 const init = async () => {
   await server.start()
