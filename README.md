@@ -2,6 +2,9 @@
 This repository contains the exercises for the Git workshop. Go ahead and clone this repository. The exercises are in different branches, the first exercise is in branch `one`, the second in branch `two`, third in `three`, etcetera. The exercises build on top of each other.
 
 Some remarks:
+- Checkout the first exercise branche:
+  - `git checkout one` or `git checkout -b one origin/one`
+  Then of course continue with branch `two` etcetera.
 - Check the log to see if your changes were successful
   - `git log --oneline --graph`
 - If you get into trouble:
