@@ -19,6 +19,8 @@ You can run the tests with `npm test`.
 
 ## Exercises
 Good luck and have fun with these exercises!
+<b>NOTE: You can find the Git history for each exercise on a seperate branch. To start with the first exercise, checkout branch `one` first. Once you have succeeded, checkout branch `two` for the second exercise etcetera</b>
+
 ### Exercise one: rewrite commit message of last commit
 The commit message of the last commit is missing the JIRA issue number (GIT-1). Add the JIRA issue number to the commit message by using `git commit --amend`. The new commit message should be `[GIT-1] Update the README to include the first exercise`
 
