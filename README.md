@@ -52,3 +52,12 @@ In exercise three we fixed the commit by using `edit`. This time we will use a d
 - reorder the commit so that your new commit will be below the `[GIT-6] Add easter egg for Appie in default route` commit
 - change the action for the new commit to `fixup`
 - save the file and voila, your commit is fixed
+
+### Exercise seven: split up a previous commit to make logical changes
+We have been working on a new endpoint: `/products`. This is quite a lot of work, because products need to be retrieved from a MongoDB instance. Our first step was to create a Dockerfile for this project and a docker-compose configuration, to be able to develop locally against a MongoDB instance running in a container. We also started working on the endpoint, which at first returns an empty object. Later we will work on setting up the MongoDB connection, for example. We have created a commit that contains all the changes that we have made so far.
+
+Have a look at this `[GIT-7] WIP Add products GET endpoint` commit. It contains changes related to setting up Docker and it contains changes related to the new endpoint. We should split that commit up, to make two logical changes. Split this commit into two commits:
+- `[GIT-7] Add first version of products GET endpoint`
+- `[GIT-7] Add Dockerfile and docker-compose configuration`
+
+_Tip: use `git reset HEAD~` to reset the HEAD reference to the commit before the WIP commit. After that you can make commits by `git add -p` and `git commit`_
