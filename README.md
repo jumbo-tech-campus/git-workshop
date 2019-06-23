@@ -5,6 +5,7 @@ Some remarks:
 - Checkout the first exercise branche:
   - `git checkout one` or `git checkout -b one origin/one`
   Then of course continue with branch `two` etcetera.
+- Branches were created in succession, so you can do rebasing on the branch of the previous exercise. For example, in exercise four you should rebase on branch of exercise three, so `git rebase -i origin/three` should work.
 - Check the log to see if your changes were successful
   - `git log --oneline --graph`
 - If you get into trouble:
@@ -25,7 +26,7 @@ Good luck and have fun with these exercises!
 The commit message of the last commit is missing the JIRA issue number (GIT-1). Add the JIRA issue number to the commit message by using `git commit --amend`. The new commit message should be `[GIT-1] Update the README to include the first exercise`
 
 ### Exercise two: rewrite commit message of previous commit
-This exercise is similar to the first one, you have to rewrite the commit message of the `Update the README to include the first exercise` commit. This time you cannot use `git commit --amend`, because it isn't the last commit you want to change (check `git log` to see which one it is). Now you can use interactive rebase to change the commit: `git rebase -i origin/master`.
+This exercise is similar to the first one, you have to rewrite the commit message of the `Update the README to include the first exercise` commit. This time you cannot use `git commit --amend`, because it isn't the last commit you want to change (check `git log` to see which one it is). Now you can use interactive rebase to change the commit: `git rebase -i origin/one`.
 
 _Tip: read the instructions in the editor that Git presents. You need to change the word `pick` into `reword` in one of the lines!_
 
@@ -43,7 +44,7 @@ expect(response.payload).to.equal('Hallo world!')
 ```
 to make sure the tests still run.
 
-Use interactive rebasing to change the commit: `git rebase -i origin/master`.
+Use interactive rebasing to change the commit: `git rebase -i origin/two`.
 
 _Tip: you can use `edit` to change the commit during rebasing. Git will stop the rebase at the point of the commit, you can change the code and add your changes to the stage with `git add`. Once added, you can finish the rebase with `git rebase --continue`_
 
