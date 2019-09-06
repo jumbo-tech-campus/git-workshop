@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/jumbo-tech-campus/git-workshop#readme",
   "dependencies": {
-    "hapi": "^17.5.2",
+    "hapi": "^18.0.0",
     "nodemon": "^1.18.3"
   },
   "devDependencies": {
